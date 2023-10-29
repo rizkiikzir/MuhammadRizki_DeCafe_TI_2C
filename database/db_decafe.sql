@@ -14,23 +14,23 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumping structure for table db_decafe.tb_user
+-- Dumping structure for table decafe.tb_user
 CREATE TABLE IF NOT EXISTS `tb_user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nama` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `username` varchar(200) DEFAULT NULL,
-  `password` varchar(200) DEFAULT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `nohp` varchar(15) CHARACTER SET utf8mb4 DEFAULT NULL,
   `level` int DEFAULT NULL,
-  `nohp` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table db_decafe.tb_user: ~0 rows (approximately)
-INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `level`, `nohp`) VALUES
-	(1, 'abc1', 'abc1@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', 2, '123456789011'),
-	(2, 'owner', 'admin@admin.com', '5f4dcc3b5aa765d61d8327deb882cf99', 1, '123456789011'),
-	(3, 'abc2', 'abc2@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', 3, '123456789011'),
-	(4, 'abc3', 'abc3@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', 4, '123456789011');
+-- Dumping data for table decafe.tb_user: ~4 rows (approximately)
+INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `nohp`, `level`) VALUES
+	(1, 'Abc', 'abc@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', '123456789011', 2),
+	(2, 'Owner', 'admin@admin.com', '5f4dcc3b5aa765d61d8327deb882cf99', '123456789011', 1),
+	(3, 'Abc2', 'abc2@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', '123456789011', 3),
+	(4, 'Abc3', 'abc3@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', '123456789011', 4);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
