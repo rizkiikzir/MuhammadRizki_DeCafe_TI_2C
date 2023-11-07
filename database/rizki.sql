@@ -16,24 +16,24 @@
 
 
 -- Dumping database structure for db_decafe
-CREATE DATABASE IF NOT EXISTS `db_decafe` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `db_decafe` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_decafe`;
 
 -- Dumping structure for table db_decafe.tb_daftar_menu
 CREATE TABLE IF NOT EXISTS `tb_daftar_menu` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `foto` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `nama_menu` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `keterangan` varchar(200) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `foto` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `nama_menu` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `keterangan` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `kategori` int DEFAULT NULL,
-  `harga` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `stok` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `harga` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `stok` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `FK_tb_daftar_menu_tb_kategori_menu` (`kategori`),
   CONSTRAINT `FK_tb_daftar_menu_tb_kategori_menu` FOREIGN KEY (`kategori`) REFERENCES `tb_kategori_menu` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table db_decafe.tb_daftar_menu: ~7 rows (approximately)
+-- Dumping data for table db_decafe.tb_daftar_menu: ~11 rows (approximately)
 INSERT INTO `tb_daftar_menu` (`id`, `foto`, `nama_menu`, `keterangan`, `kategori`, `harga`, `stok`) VALUES
 	(1, '1.png', 'Mie Aceh Seafood', 'Asli Aceh', 4, '10000', '50'),
 	(2, '2.png', 'Burger', 'Dengan daging sapi australia', 3, '5000', '23'),
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `tb_kategori_menu` (
   `jenis_menu` int DEFAULT NULL,
   `kategori_menu` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table db_decafe.tb_kategori_menu: ~4 rows (approximately)
 INSERT INTO `tb_kategori_menu` (`id`, `jenis_menu`, `kategori_menu`) VALUES
@@ -61,16 +61,16 @@ INSERT INTO `tb_kategori_menu` (`id`, `jenis_menu`, `kategori_menu`) VALUES
 -- Dumping structure for table db_decafe.tb_user
 CREATE TABLE IF NOT EXISTS `tb_user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nama` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `nohp` varchar(15) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `nohp` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `level` int DEFAULT NULL,
-  `alamat` varchar(300) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `alamat` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dumping data for table db_decafe.tb_user: ~7 rows (approximately)
+-- Dumping data for table db_decafe.tb_user: ~6 rows (approximately)
 INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `nohp`, `level`, `alamat`) VALUES
 	(1, 'Abc', 'abc@abc.com', '5f4dcc3b5aa765d61d8327deb882cf99', '123456789011', 2, '0'),
 	(2, 'Owner', 'admin@admin.com', '5f4dcc3b5aa765d61d8327deb882cf99', '123456789011', 1, '0'),
